@@ -18,12 +18,15 @@ class Thing
   argh 'command_attributes' do
 		attribute(:name)
 		attribute(:reverse_name) { name.reverse }
-		attribute(:repeat_name, :from => :name)
   end
 
-	def initialize(name)
-		@name = name
+	private
+
+	def name
+		'Heyoo'
 	end
 
 end
+
+Thing.new.command_attributes # "-name 'Heyoo' -reverse_name 'ooyeH'"
 ```
