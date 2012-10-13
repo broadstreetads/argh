@@ -13,18 +13,18 @@ class Thing
 
   include Argh::Attributable
 
-	attr_reader :name
+  attr_reader :name
 
   argh 'command_attributes' do
-		attribute(:name)
-		attribute(:reverse_name) { name.reverse }
+    attribute(:name)
+    attribute(:reverse_name) { name.reverse }
   end
 
-	private
+  private
 
-	def name
-		'Heyoo'
-	end
+  def name
+    'Heyoo'
+  end
 
 end
 
