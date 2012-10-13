@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/broadstreetads/argh.png)](http://travis-ci.org/broadstreetads/argh)
 
-It can be a huge pain to build arguments for an external command.
+It can be a huge pain to build arguments for an external service.
 There's all of those annoying escaping issues, and you just shouldn't
 have to deal with that crap.
 
