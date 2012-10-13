@@ -1,0 +1,11 @@
+script: "rspec spec"
+notifications:
+  email:
+    - john.crepezzi@gmail.com
+branches:
+  only:
+    - master
+    - v0.7
+rvm:
+  - 1.9.2
+  - 1.9.3
