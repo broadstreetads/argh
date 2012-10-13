@@ -24,8 +24,6 @@ class Thing
 
   include Argh::Attributable
 
-  attr_reader :name
-
   argh 'command_attributes' do
     attribute(:name)
     attribute(:reverse_name) { name.reverse }
