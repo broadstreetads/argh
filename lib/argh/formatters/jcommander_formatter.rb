@@ -14,6 +14,8 @@ module Argh
 
       private
 
+      # NOTE: Strings need to be escaped when they contain a single-quote,
+      # by breaking the quote, inserting a ' (escaped) and then re-opening
       def escape(name, value)
         case value
         when NilClass, FalseClass then nil
