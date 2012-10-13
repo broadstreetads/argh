@@ -6,8 +6,17 @@ It can be a huge pain to build arguments for an external command.
 There's all of those annoying escaping issues, and you just shouldn't
 have to deal with that crap.
 
-Argh makes it easy to define how to serialize some attributes.  Just
-include `Argh::Attributable` into any Ruby class, and you're off to
+Argh makes it easy to define how to serialize those attributes.
+
+## Installation
+
+``` bash
+gem install argh
+```
+
+## Usage
+
+Just include `Argh::Attributable` into any Ruby class, and you're off to
 the races.
 
 ``` ruby
@@ -32,3 +41,20 @@ end
 
 Thing.new.command_attributes # "-name 'Heyoo' -reverse_name 'ooyeH'"
 ```
+
+The default formatter is built to work
+with [JCommander](http://jcommander.org/),
+but it's very easy to add and use your own formatters.  For an example,
+check out the [JCommanderFormatter](https://github.com/broadstreetads/argh/blob/master/lib/argh/formatters/jcommander_formatter.rb)
+implementation.  To use them, you can just pass a second argument to `argh`,
+like:
+
+``` ruby
+argh 'your_name', SomeOtherFormatter do
+	# ...
+end
+```
+
+## License
+
+See LICENSE
