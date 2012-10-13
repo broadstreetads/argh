@@ -1,7 +1,7 @@
 module Argh
   module Attributable
 
-    DEFAULT_PROCESSOR = Processors::JCommanderProcessor
+    DEFAULT_FORMATTER = Formatters::JCommanderFormatter
 
     def self.included(base)
       base.extend(ClassMethods)
@@ -9,12 +9,12 @@ module Argh
 
     module ClassMethods
 
-      def argh(name, processor_klass = DEFAULT_PROCESSOR, &block)
+      def argh(name, formatter_klass = DEFAULT_FORMATTER, &block)
         collector = Collector.new(&block)
         mod = Module.new
         mod.send(:define_method, name) do
-          processor = processor_klass.new collector, self
-          processor.process
+          formatter = formatter_klass.new collector, self
+          formatter.process
         end
         # Extend this module onto ourselves
         self.send(:include, mod)

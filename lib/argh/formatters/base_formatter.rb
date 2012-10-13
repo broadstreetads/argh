@@ -1,7 +1,7 @@
 module Argh
-  module Processors
+  module Formatters
 
-    class BaseProcessor
+    class BaseFormatter
 
       def initialize(collector, context)
         @collector = collector
@@ -17,7 +17,7 @@ module Argh
       end
 
       def process
-        raise 'BaseProcessor should be subclassed'
+        raise 'BaseFormatter should be subclassed'
       end
 
     end

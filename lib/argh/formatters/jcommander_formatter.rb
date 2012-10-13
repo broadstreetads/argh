@@ -1,7 +1,7 @@
 module Argh
-  module Processors
+  module Formatters
 
-    class JCommanderProcessor < BaseProcessor
+    class JCommanderFormatter < BaseFormatter
 
       def process
         information = []

@@ -4,14 +4,14 @@ require_relative '../spec_helper'
 class JCommanderExample
   attr_accessor :attr
   include Argh::Attributable
-  argh 'console_attributes', Argh::Processors::JCommanderProcessor do
+  argh 'console_attributes', Argh::Formatters::JCommanderFormatter do
     attribute :attr
   end
 end
 
 ##########
 
-describe Argh::Processors::JCommanderProcessor do
+describe Argh::Formatters::JCommanderFormatter do
 
   let(:attr) { nil }
   let(:result) do

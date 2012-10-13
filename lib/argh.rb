@@ -4,7 +4,7 @@ module Argh
 
   autoload :Attributable, base + '/argh/attributable'
   autoload :Collector, base + '/argh/collector'
-  autoload :Processors, base + '/argh/processors'
+  autoload :Formatters, base + '/argh/formatters'
 
   autoload :VERSION, base + '/argh/version'
 
