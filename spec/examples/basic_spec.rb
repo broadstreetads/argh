@@ -41,6 +41,10 @@ describe Argh::Attributable do
 
   let(:example) { BasicExample.new }
 
+  it 'should have a version' do
+    Argh::VERSION.should be_a(String)
+  end
+
   it 'better not define #attribute on example instance' do
     example.should_not respond_to(:attribute)
   end

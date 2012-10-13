@@ -6,4 +6,6 @@ module Argh
   autoload :Collector, base + '/argh/collector'
   autoload :Processors, base + '/argh/processors'
 
+  autoload :VERSION, base + '/argh/version'
+
 end
