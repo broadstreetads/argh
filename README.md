@@ -41,8 +41,8 @@ Thing.new.command_attributes # "-name 'Heyoo' -reverse_name 'ooyeH'"
 ```
 
 The default formatter is built to work
-with [JCommander](http://jcommander.org/),
-but it's very easy to add and use your own formatters.  For an example,
+with and properly escape arguments for [JCommander](http://jcommander.org/),
+but it's very easy to add and use your own formatters (_and contribute them_).  For an example,
 check out the [JCommanderFormatter](https://github.com/broadstreetads/argh/blob/master/lib/argh/formatters/jcommander_formatter.rb)
 implementation.  To use them, you can just pass a second argument to `argh`,
 like:
