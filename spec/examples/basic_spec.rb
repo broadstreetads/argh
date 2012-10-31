@@ -23,6 +23,10 @@ class BasicExample
     attribute(:name) { name.reverse }
   end
 
+  argh 'symb' do
+    attribute(:the_name, :name)
+  end
+
   private
 
   def name
@@ -63,6 +67,10 @@ describe Argh::Attributable do
 
   it 'should be able to specify a lambda instead of the original' do
     example.lambs.should == '-name \'izzeperC nhoJ\''
+  end
+
+  it 'should be able to specify a symbol instead of a lambda' do
+    example.symb.should == '-the_name \'John Crepezzi\''
   end
 
 end

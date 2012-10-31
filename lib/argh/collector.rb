@@ -9,10 +9,10 @@ module Argh
       instance_eval(&block)
     end
 
-    def attribute(name, &block)
+    def attribute(name, attribute = nil, &block)
       @attributes << {
         :name => name,
-        :lambda => block || lambda { |i| i.send(name) }
+        :lambda => block || lambda { |i| i.send(attribute || name) }
       }
     end
 
