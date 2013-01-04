@@ -10,15 +10,10 @@ module Argh
     end
 
     def attribute(name, value = nil, &block)
-      attribute = nil
-      if value.is_a?(Symbol)
-        attribute = value
-        value = nil
-      end
       @attributes << {
         :name => name,
         :value => value,
-        :lambda => block || lambda { |i| i.send(attribute || name) }
+        :lambda => block || lambda { |i| i.send(name) }
       }
     end
 
