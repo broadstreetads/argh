@@ -19,6 +19,10 @@ class BasicExample
     attribute :name
   end
 
+  argh 'straight' do
+    attribute :name, 'john'
+  end
+
   argh 'lambs' do
     attribute(:name) { name.reverse }
   end
@@ -63,6 +67,10 @@ describe Argh::Attributable do
 
   it 'should be able to specify a lambda instead of the original' do
     example.lambs.should == '-name \'izzeperC nhoJ\''
+  end
+
+  it 'should be able to take straight arguments' do
+    example.straight.should == '-name \'john\''
   end
 
 end

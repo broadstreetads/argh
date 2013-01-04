@@ -11,7 +11,7 @@ module Argh
       def attributes(&block)
         return enum_for(:attributes) unless block_given?
         @collector.attributes.each do |attr|
-          value = @context.instance_eval(&attr[:lambda])
+          value = attr[:value] || @context.instance_eval(&attr[:lambda])
           yield attr[:name], value
         end
       end
