@@ -26,6 +26,7 @@ class Thing
 
   argh 'command_attributes' do
     attribute(:name)
+    attribute(:proxy_name, :name)
     attribute(:reverse_name) { name.reverse }
 		attribute(:direct, 'value')
   end
@@ -38,7 +39,7 @@ class Thing
 
 end
 
-Thing.new.command_attributes # "-name 'Heyoo' -reverse_name 'ooyeH' -direct 'value'"
+Thing.new.command_attributes # "-name 'Heyoo' -reverse_name 'ooyeH' -proxy_name 'Heyoo' -direct 'value'"
 ```
 
 The default formatter is built to work
